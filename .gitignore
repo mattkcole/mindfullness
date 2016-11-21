@@ -28,9 +28,13 @@ vignettes/*.pdf
 /*_cache/
 /cache/
 
+# things that are not meaningful 
+*.DS_Store
+
 # Temporary files created by R markdown
 *.utf8.md
 *.knit.md
 
 # Dense media files
 *.mp3
+.Rproj.user
