@@ -11,6 +11,11 @@ library("markdown")
 
 shinyUI(fluidPage(
         
+        mainPanel(
+                h3("clientData values"),
+                verbatimTextOutput("clientdataText")
+        ),
+        
         # Application title
         titlePanel("Be mindfull"),
         
