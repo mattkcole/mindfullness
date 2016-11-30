@@ -25,13 +25,13 @@ shinyUI(fluidPage(
                                    fluidRow(tags$audio(src = "NICU_10min_Well_wishes.mp3", 
                                               type = "audio/mp3", 
                                               controls = T)))),
-                tabPanel("Nordish By Nature",
+                tabPanel("Stressed",
                          mainPanel("hey this should say the tab title: tab 2", 
                                    tags$audio(src = "nordish.mp3", 
                                               type = "audio/mp3", 
                                                controls = NA))),
                 
-                tabPanel("tab 3",
+                tabPanel("?!",
                          mainPanel("hey this should say the tab title: tab 3", 
                                    tags$audio(src = "nordish.mp3", 
                                               type = "audio/mp3", 
@@ -46,4 +46,7 @@ shinyUI(fluidPage(
                 
         )
 ))
+
+# find functions to log browser session information.
+
 
