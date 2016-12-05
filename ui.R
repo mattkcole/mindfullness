@@ -1,10 +1,3 @@
-
-# This is the user-interface definition of a Shiny web application.
-# You can find out more about building applications with Shiny here:
-#
-# http://shiny.rstudio.com
-#
-
 library("shiny")
 library("tuneR")
 library("markdown")
@@ -19,29 +12,62 @@ shinyUI(fluidPage(
                 tabPanel("Well Wishes",
                          mainPanel("We wish you well :)", 
                                    fluidRow(
-                                   tags$audio(src = "NICU_5_mins_Well_wishes.mp3", 
+                                   tags$audio(src = "NICU_5 mins_Well wishes.mp3", 
                                               type = "audio/mp3", 
-                                              controls = T)),
-                                   fluidRow(tags$audio(src = "NICU_10min_Well_wishes.mp3", 
+                                              controls = T,
+                                              onended="rscripts/record.R")), # add js
+                                   fluidRow(tags$audio(src = "NICU_10min_Well wishes.mp3", 
                                               type = "audio/mp3", 
                                               controls = T)))),
-                tabPanel("Stressed",
-                         mainPanel("hey this should say the tab title: tab 2", 
-                                   tags$audio(src = "nordish.mp3", 
-                                              type = "audio/mp3", 
-                                               controls = NA))),
                 
-                tabPanel("?!",
+                
+                tabPanel("Self kindness",
+                         mainPanel("hey this should say the tab title: Self kindness", 
+                                   fluidRow(
+                                           tags$audio(src = "NICU_5 mins_Self-kindness.mp3", 
+                                                      type = "audio/mp3", 
+                                                      controls = T,
+                                                      onended="rscripts/record.R")
+                                           ), # add js
+                                   fluidRow(
+                                           tags$audio(src = "NICU_10mins_Selfkindness.mp3", 
+                                                       type = "audio/mp3", 
+                                                       controls = T)
+                                           )
+                        )
+                ),
+                
+                tabPanel("Just breathe and be",
                          mainPanel("hey this should say the tab title: tab 3", 
-                                   tags$audio(src = "nordish.mp3", 
-                                              type = "audio/mp3", 
-                                              controls = NA))),
+                                   fluidRow(
+                                           tags$audio(src = "NICU_5 mins_ Just breathe and be.mp3", 
+                                                      type = "audio/mp3", 
+                                                      controls = T,
+                                                      onended="rscripts/record.R")
+                                   ), # add js
+                                   fluidRow(
+                                           tags$audio(src = "NICU_10mins_Just breathe and be.mp3", 
+                                                      type = "audio/mp3", 
+                                                      controls = T)
+                                   )
+                         )
+                ),
                 
-                tabPanel("tab 4",
+                tabPanel("Arriving",
                          mainPanel("hey this should say the tab title: tab 4", 
-                                   tags$audio(src = "nordish.mp3", 
-                                              type = "audio/mp3", 
-                                              controls = NA)))
+                                   fluidRow(
+                                           tags$audio(src = "NICU_Arriving_5min.mp3", 
+                                                      type = "audio/mp3", 
+                                                      controls = T,
+                                                      onended="rscripts/record.R")
+                                   ), # add js
+                                   fluidRow(
+                                           tags$audio(src = "NICU_Arriving_10 mins.mp3", 
+                                                      type = "audio/mp3", 
+                                                      controls = T)
+                                   )
+                         )
+                ),
                 
                 
         )
