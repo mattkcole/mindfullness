@@ -16,7 +16,7 @@ shinyUI(fluidPage(
                                    tags$audio(src = "well_wish_5.mp3", 
                                               type = "audio/mp3", 
                                               controls = T,
-                                              onplaying = "hoge.js"
+                                              onbegin = "myFunction()"
                                               )
                                    ), # add js
                                    
@@ -80,12 +80,19 @@ shinyUI(fluidPage(
         mainPanel(
                 tags$head(HTML(
 "<script>
-function myFunction() {
-    alert('The video is now playing');
-}
-</script>"
+clicks = 0;
 
-), "JAVASCRIPT IS HERE")
+function myFunction() {
+
+        clicks = clicks + 1
+        alert(clicks);
+
+}
+
+</script>"
+), 
+
+"JAVASCRIPT IS HERE")
         )
 ))
 # find functions to log browser session information.
