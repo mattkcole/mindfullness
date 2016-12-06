@@ -2,8 +2,9 @@ library("shiny")
 library("tuneR")
 library("markdown")
 
+
+
 shinyUI(fluidPage(
-        
         # Application title
         titlePanel("Be mindfull"),
         
@@ -12,25 +13,30 @@ shinyUI(fluidPage(
                 tabPanel("Well Wishes",
                          mainPanel("We wish you well :)", 
                                    fluidRow(
-                                   tags$audio(src = "NICU_5 mins_Well wishes.mp3", 
+                                   tags$audio(src = "well_wish_5.mp3", 
                                               type = "audio/mp3", 
                                               controls = T,
-                                              onended="rscripts/record.R")), # add js
-                                   fluidRow(tags$audio(src = "NICU_10min_Well wishes.mp3", 
+                                              onplaying = "hoge.js"
+                                              )
+                                   ), # add js
+                                   
+                                   fluidRow(
+                                           tags$audio(src = "well_wish_10.mp3", 
                                               type = "audio/mp3", 
-                                              controls = T)))),
+                                              controls = T,
+                                              onplaying = "myFunction()")))
+                         ),
                 
-                
+
                 tabPanel("Self kindness",
                          mainPanel("hey this should say the tab title: Self kindness", 
                                    fluidRow(
-                                           tags$audio(src = "NICU_5 mins_Self-kindness.mp3", 
+                                           tags$audio(src = "self_kindness_5.mp3", 
                                                       type = "audio/mp3", 
-                                                      controls = T,
-                                                      onended="rscripts/record.R")
+                                                      controls = T)
                                            ), # add js
                                    fluidRow(
-                                           tags$audio(src = "NICU_10mins_Selfkindness.mp3", 
+                                           tags$audio(src = "self_kindness_10.mp3", 
                                                        type = "audio/mp3", 
                                                        controls = T)
                                            )
@@ -40,13 +46,13 @@ shinyUI(fluidPage(
                 tabPanel("Just breathe and be",
                          mainPanel("hey this should say the tab title: tab 3", 
                                    fluidRow(
-                                           tags$audio(src = "NICU_5 mins_ Just breathe and be.mp3", 
+                                           tags$audio(src = "NICU_5_mins_Just_breathe_and_be.mp3", 
                                                       type = "audio/mp3", 
                                                       controls = T,
                                                       onended="rscripts/record.R")
                                    ), # add js
                                    fluidRow(
-                                           tags$audio(src = "NICU_10mins_Just breathe and be.mp3", 
+                                           tags$audio(src = "NICU_10mins_Just_breathe_and_be.mp3", 
                                                       type = "audio/mp3", 
                                                       controls = T)
                                    )
@@ -62,17 +68,24 @@ shinyUI(fluidPage(
                                                       onended="rscripts/record.R")
                                    ), # add js
                                    fluidRow(
-                                           tags$audio(src = "NICU_Arriving_10 mins.mp3", 
+                                           tags$audio(src = "NICU_Arriving_10_mins.mp3", 
                                                       type = "audio/mp3", 
                                                       controls = T)
                                    )
                          )
-                ),
+                )
                 
                 
+        ),
+        mainPanel(
+                tags$head(HTML(
+"<script>
+function myFunction() {
+    alert('The video is now playing');
+}
+</script>"
+
+), "JAVASCRIPT IS HERE")
         )
 ))
-
 # find functions to log browser session information.
-
-
