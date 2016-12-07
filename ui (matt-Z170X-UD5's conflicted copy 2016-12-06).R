@@ -16,7 +16,7 @@ shinyUI(fluidPage(
                                    tags$audio(src = "well_wish_5.mp3", 
                                               type = "audio/mp3", 
                                               controls = T,
-                                              onbegin = "playCounter()"
+                                              onplaying = "hoge.js"
                                               )
                                    ), # add js
                                    
@@ -24,7 +24,7 @@ shinyUI(fluidPage(
                                            tags$audio(src = "well_wish_10.mp3", 
                                               type = "audio/mp3", 
                                               controls = T,
-                                              onplaying = "pauseCounter()")))
+                                              onplaying = "myFunction()")))
                          ),
                 
 
@@ -33,8 +33,7 @@ shinyUI(fluidPage(
                                    fluidRow(
                                            tags$audio(src = "self_kindness_5.mp3", 
                                                       type = "audio/mp3", 
-                                                      controls = T,
-                                                      onended = "endCounter()")
+                                                      controls = T)
                                            ), # add js
                                    fluidRow(
                                            tags$audio(src = "self_kindness_10.mp3", 
@@ -81,36 +80,12 @@ shinyUI(fluidPage(
         mainPanel(
                 tags$head(HTML(
 "<script>
-var plays = 0;
-var end = 0;
-var pause = 0;
-var ends = 0;
-
-function playCounter() {
-        plays = plays + 1
-        alert(plays);
+function myFunction() {
+    alert('The video is now playing');
 }
-
-function endCounter() {
-        end = end + 1
-        alert(end);
-}
-
-function pauseCounter() {
-        pause = pause + 1
-        alert(pause);
-}
-
-function endCounter() {
-        ends = ends + 1
-        alert(ends);
-}
-
-
 </script>"
-), 
 
-"JAVASCRIPT IS HERE")
+), "JAVASCRIPT IS HERE")
         )
 ))
 # find functions to log browser session information.
