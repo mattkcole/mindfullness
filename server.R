@@ -1,28 +1,16 @@
-
 library(shiny)
+library(shinyjs)
+library(readr)
+library(dplyr)
+
+write_date <- function(){
+        date() %>%
+                as.data.frame() %>%
+                write_csv("TEST")
+}
 
 shinyServer(function(input, output, session) {
-
-        user <- reactive({
-                session$user
-        })
-        
-        isResearcher <- reactive({
-                if (user() == "researcher"){
-                        return(TRUE)
-                } else{
-                        return(FALSE)
-                }
-        })
-        
-        myData <- reactive({
-                if (isResearcher()){
-                        # If a manager, show everything.
-                        return(RecData)
-                } else{
-                        # If a regular salesperson, only show their own sales.
-                        return(RecData[RecData$person == user(),])
-                }
-        })
-
+        onevent("keypress", "Audio1", write_date()) # click, dblclick, hover, 
+        # mousedown, mouseenter, mouseleave, mousemove, mouseout, mouseover, 
+        # mouseup, keydown, keypress, keyup
 })

@@ -5,6 +5,7 @@ library("markdown")
 
 
 shinyUI(fluidPage(
+        useShinyjs(),
         # Application title
         titlePanel("Be mindfull"),
         
@@ -13,10 +14,9 @@ shinyUI(fluidPage(
                 tabPanel("Well Wishes",
                          mainPanel("We wish you well :)", 
                                    fluidRow(
-                                   tags$audio(src = "well_wish_5.mp3", 
+                                   tags$audio(id = "Audio1", src = "well_wish_5.mp3", 
                                               type = "audio/mp3", 
-                                              controls = T,
-                                              onbegin = "playCounter()"
+                                              controls = T
                                               )
                                    ), # add js
                                    
