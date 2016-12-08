@@ -16,7 +16,8 @@ shinyUI(fluidPage(
                                    fluidRow(
                                    tags$audio(id = "Audio1", src = "well_wish_5.mp3", 
                                               type = "audio/mp3", 
-                                              controls = T
+                                              controls = F,
+                                              onplaying = "playCounter()"
                                               )
                                    ), # add js
                                    
@@ -79,35 +80,9 @@ shinyUI(fluidPage(
                 
         ),
         mainPanel(
-                tags$head(HTML(
-"<script>
-var plays = 0;
-var end = 0;
-var pause = 0;
-var ends = 0;
+                tags$body(tags$script(src="mycode.js"))
+                
 
-function playCounter() {
-        plays = plays + 1
-        alert(plays);
-}
-
-function endCounter() {
-        end = end + 1
-        alert(end);
-}
-
-function pauseCounter() {
-        pause = pause + 1
-        alert(pause);
-}
-
-function endCounter() {
-        ends = ends + 1
-        alert(ends);
-}
-
-
-</script>"
 ), 
 
 "JAVASCRIPT IS HERE")
