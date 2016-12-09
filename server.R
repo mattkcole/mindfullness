@@ -1,7 +1,7 @@
-library(shiny)
-library(shinyjs)
-library(readr)
-library(dplyr)
+library("shiny")
+library("shinyjs")
+library("readr")
+library("dplyr")
 
 write_date <- function(){
         date() %>%
@@ -10,8 +10,8 @@ write_date <- function(){
 }
 
 shinyServer(function(input, output, session) {
-        onevent("keypress", "Audio1", write_date()) # click, dblclick, hover, 
-        # mousedown, mouseenter, mouseleave, mousemove, mouseout, mouseover, 
-        # mouseup, keydown, keypress, keyup
-        input$plays 
-})
+        output$results = renderPrint({
+                input$plays_r
+        })
+}) 
+        

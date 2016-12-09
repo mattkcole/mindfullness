@@ -5,8 +5,7 @@ var ends = 0;
 
 function playCounter() {
         plays = plays + 1;
-        Shiny.onInputChange('plays', plays);
-        alert(plays);
+        Shiny.onInputChange('plays_r', plays);
 }
 
 function endCounter() {

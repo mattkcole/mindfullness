@@ -80,12 +80,9 @@ shinyUI(fluidPage(
                 
         ),
         mainPanel(
-                tags$body(tags$script(src="mycode.js"))
+                tags$body(tags$script(src="mycode.js")),
+                verbatimTextOutput("results")
                 
 
-), 
-
-"JAVASCRIPT IS HERE")
-        )
 ))
-# find functions to log browser session information.
+        ) # find functions to log browser session information.
