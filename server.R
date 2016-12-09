@@ -13,5 +13,8 @@ shinyServer(function(input, output, session) {
         output$results = renderPrint({
                 input$plays_r
         })
+        observeEvent(input$plays_r, {
+                write_date()
+        })
 }) 
         
