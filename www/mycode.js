@@ -3,10 +3,25 @@ var end = 0;
 var pause = 0;
 var ends = 0;
 
-function playCounter() {
+// USED FUNCTIONS
+// are below 
+
+function playCounter(file) {
         plays = plays + 1;
-        Shiny.onInputChange('plays_r', plays);
+        info = [file, plays];
+        Shiny.onInputChange('plays_r', info);
 }
+
+function pauseCounter(file) {
+        // Counting the number of pauses
+        pause = pause + 1;
+        
+        Shiny.onInputChange('pause.R', pause);
+}
+
+// UNUSED FUNCTIONS
+// unused functions are below this line
+//
 
 function endCounter() {
         // Counting the number of time the audio file ended
@@ -15,12 +30,7 @@ function endCounter() {
         alert(end);
 }
 
-function pauseCounter() {
-        // Counting the number of pauses
-        pause = pause + 1;
-        Shiny.onInputChange('record.R', pause);
-        alert(pause);
-}
+
 
 function endCounter() {
         ends = ends + 1;
