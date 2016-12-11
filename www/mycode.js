@@ -9,11 +9,14 @@ function playCounter() {
 }
 
 function endCounter() {
+        // Counting the number of time the audio file ended
+
         end = end + 1;
         alert(end);
 }
 
 function pauseCounter() {
+        // Counting the number of pauses
         pause = pause + 1;
         Shiny.onInputChange('record.R', pause);
         alert(pause);
