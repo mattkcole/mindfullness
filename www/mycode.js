@@ -20,6 +20,6 @@ function pauseCounter() {
 }
 
 function endCounter() {
-ends = ends + 1;
-alert(ends);
+        ends = ends + 1;
+        alert(ends);
 }
