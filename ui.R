@@ -1,6 +1,7 @@
 library("shiny")
 library("tuneR")
 library("markdown")
+library("shinyjs")
 
 
 
@@ -17,7 +18,8 @@ shinyUI(fluidPage(
                                    tags$audio(id = "Audio1", src = "well_wish_5.mp3", 
                                               type = "audio/mp3", 
                                               controls = F,
-                                              onplaying = "playCounter()"
+                                              onplaying = "playCounter()",
+                                              onpause = "pauseCounter()"
                                               )
                                    ), # add js
                                    
