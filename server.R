@@ -5,7 +5,6 @@ library("dplyr")
 library("googlesheets")
 library("lubridate")
 
-
 data <- gs_title("mindfullness")
 
 write_date <- function(user, file, action, date, h, m, s){
