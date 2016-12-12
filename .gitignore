@@ -40,4 +40,5 @@ vignettes/*.pdf
 .Rproj.user
 
 # test files
+code2/
 TEST

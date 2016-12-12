@@ -4,7 +4,7 @@ library("shiny")
 library("shinyjs")
 
 page <-
-        
+
 fluidPage(
         useShinyjs(),
         # Application title
@@ -27,7 +27,10 @@ fluidPage(
                                            tags$audio(src = "well_wish_10.mp3", 
                                                       type = "audio/mp3", 
                                                       controls = T,
-                                                      onplaying = "pauseCounter()")))
+                                                      onplaying = "playCounter('well_10')",
+                                                      onpause = "pauseCounter('well_10')")
+                                           )
+                                   )
                 ),
                 
                 
@@ -37,12 +40,16 @@ fluidPage(
                                            tags$audio(src = "self_kindness_5.mp3", 
                                                       type = "audio/mp3", 
                                                       controls = T,
-                                                      onended = "endCounter()")
-                                   ), # add js
+                                                      onplaying = "playCounter('self_5')",
+                                                      onpause = "pauseCounter('self_5')"
+                                        ) # add js
+                                   ),
                                    fluidRow(
                                            tags$audio(src = "self_kindness_10.mp3", 
                                                       type = "audio/mp3", 
-                                                      controls = T)
+                                                      controls = T,
+                                                      onplaying = "playCounter('self_10')",
+                                                      onpause = "pauseCounter('self_10')")
                                    )
                          )
                 ),
@@ -53,12 +60,16 @@ fluidPage(
                                            tags$audio(src = "NICU_5_mins_Just_breathe_and_be.mp3", 
                                                       type = "audio/mp3", 
                                                       controls = T,
-                                                      onended="rscripts/record.R")
+                                                      onended="rscripts/record.R",
+                                                      onplaying = "playCounter('breath_5')",
+                                                      onpause = "pauseCounter('breath_5')")
                                    ), # add js
                                    fluidRow(
                                            tags$audio(src = "NICU_10mins_Just_breathe_and_be.mp3", 
                                                       type = "audio/mp3", 
-                                                      controls = T)
+                                                      controls = T,
+                                                      onplaying = "playCounter('breath_10')",
+                                                      onpause = "pauseCounter('breath_10')")
                                    )
                          )
                 ),
@@ -69,21 +80,22 @@ fluidPage(
                                            tags$audio(src = "NICU_Arriving_5min.mp3", 
                                                       type = "audio/mp3", 
                                                       controls = T,
-                                                      onended="rscripts/record.R")
+                                                      onplaying = "playCounter('arrive_5')",
+                                                      onpause = "pauseCounter('arrive_5')")
                                    ), # add js
                                    fluidRow(
-                                           tags$audio(src = "NICU_Arriving_10_mins.mp3", 
+                                           tags$audio(src = "NICU_Arriving_10mins.mp3", 
                                                       type = "audio/mp3", 
-                                                      controls = T)
+                                                      controls = T,
+                                                      onplaying = "playCounter('arrive_10')",
+                                                      onpause = "pauseCounter('arrive_10')")
                                    )
                          )
-                )
-                
-                
-        ),
+                ),
+        # THIS LINE IS NEEDED FOR ACCESSING JAVASCRIPT
         mainPanel(
-                tags$body(tags$script(src="mycode.js")),
-                verbatimTextOutput("results")
-                
-                
-        ))
+                tags$body(tags$script(src="mycode.js")) #,
+                # verbatimTextOutput("results")
+        )
+        )
+)

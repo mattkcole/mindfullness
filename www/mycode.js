@@ -20,12 +20,20 @@ function playCounter(file) {
 function pauseCounter(file) {
         // Counting the number of pauses
         pause = pause + 1;
+        
+        // storing data as a javascript array 
         info = [file, pause];
+        
+        // 
         Shiny.onInputChange('pause_r', info);
 }
 
 // UNUSED FUNCTIONS
+//
+//
+//
 // unused functions are below this line
+//
 //
 
 function endCounter() {
