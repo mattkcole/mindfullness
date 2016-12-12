@@ -27,6 +27,12 @@ shinyServer(function(input, output, session) {
                            h = hour(ymd_hms(now())), m = minute(ymd_hms(now())),
                            s = second(ymd_hms(now())))
         })
+        observeEvent(input$pause_r, {
+                write_date(user = "User", file = input$pause_r[1], 
+                           action = "pause", date = as.character(today()),
+                           h = hour(ymd_hms(now())), m = minute(ymd_hms(now())),
+                           s = second(ymd_hms(now())))
+        })
 }) 
    
 
