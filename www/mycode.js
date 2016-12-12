@@ -7,8 +7,13 @@ var ends = 0;
 // are below 
 
 function playCounter(file) {
+        // counting plays
         plays = plays + 1;
+        
+        // storing data as a javascript array 
         info = [file, plays];
+        
+        // sending javascript objects to file 
         Shiny.onInputChange('plays_r', info);
 }
 
