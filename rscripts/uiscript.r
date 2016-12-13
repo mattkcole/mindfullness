@@ -1,6 +1,6 @@
-# uiscript.r
-
 library("shiny")
+library("tuneR")
+library("markdown")
 library("shinyjs")
 
 page <-
