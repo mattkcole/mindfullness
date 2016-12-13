@@ -18,10 +18,12 @@ PASSWORD <- data.frame(Name = c("USER","Matt","Sarah"),
 # Define server logic required to summarize and view the selected dataset
 
 
-## mc BELOW functions dealing with javascript
-
+# need a better way to authenticate google sheets.
 
 data <- gs_title("mindfullness")
+
+## mc BELOW functions dealing with javascript
+
 
 write_date <- function(user, file, action, date, h, m, s){
         # attempt to store data to a google sheet. 
