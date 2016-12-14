@@ -1,4 +1,6 @@
 
+source('rscripts/uiscript.r')
+
 shinyUI(bootstrapPage(
         # Add custom CSS & Javascript;
         tagList(
