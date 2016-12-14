@@ -15,11 +15,14 @@ PASSWORD <- data.frame(Name = c("USER","Matt","Sarah"),
                        Password = c("25d55ad283aa400af464c76d713c07ad",
                                     "7c1f90bd9bdc70cc059640a7a6209389",
                                     "28e5481a80aa2bd18c8cf35d0495980a"))
+
 # Define server logic required to summarize and view the selected dataset
 
 
-# need a better way to authenticate google sheets.
+# This script authenticates the google sheet
+source('rscripts/googleauth.R')
 
+# loading the google sheet.
 data <- gs_title("mindfullness")
 
 ## mc BELOW functions dealing with javascript
