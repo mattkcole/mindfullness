@@ -42,3 +42,7 @@ vignettes/*.pdf
 # test files
 code2/
 TEST
+
+# weird files that sometimes appear
+*.zip
+*.sqlite
